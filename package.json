@@ -1,19 +1,17 @@
 {
   "name": "voting_app",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "John Wells",
   "scripts": {
     "go": "open http://localhost:3000; npm run server",
     "e2e": "nightwatch",
     "test": "./node_modules/.bin/concurrently -k 'npm run server' 'npm run e2e'",
     "start": "npm run server",
-    "server": "http-server . -p 3000"
+    "server": "live-server public --host=localhost --port=3000 --middleware=./disable-browser-cache.js"
   },
   "private": true,
-  "dependencies": {
-    "http-server": "0.9.0"
-  },
   "devDependencies": {
-    "concurrently": "2.2.0"
+    "concurrently": "2.2.0",
+    "live-server": "https://github.com/acco/live-server/tarball/master"
   }
 }
