@@ -3,12 +3,10 @@
 
 class ProductList extends React.Component {
   render() {
-    // make an array of product components each representing an
-    // individual object in the data array and map over all products
-    const product = Data.map((product) => {
-      return (
+    const product = Data[0];
+    return (
+      <div className='ui items'>
         <Product
-          key={'product-' + product.id}
           id={product.id}
           title={product.title}
           description={product.description}
@@ -17,13 +15,8 @@ class ProductList extends React.Component {
           submitter_avatar_url={product.submitter_avatar_url}
           product_image_url={product.product_image_url}
         />
-      );
-    });
-    return (
-      <div className='ui items'>
-        {product}
       </div>
-    )
+    );
   }
 }
 
